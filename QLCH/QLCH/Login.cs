@@ -14,6 +14,7 @@ namespace QLCH
         public Login()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
