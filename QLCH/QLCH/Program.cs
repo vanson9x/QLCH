@@ -7,11 +7,7 @@ namespace QLCH
 {
     static class Program
     {
-<<<<<<< HEAD
-        public static string user = "";
-=======
        public static string user = "";
->>>>>>> Thông_tin_cá_nhân
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
