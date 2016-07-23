@@ -20,5 +20,12 @@ namespace QLCH
         {
             Application.Exit();
         }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Profile_User profile = new Profile_User();
+            profile.MdiParent = this;
+            profile.Show();
+        }
     }
 }
