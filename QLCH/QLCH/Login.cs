@@ -33,6 +33,8 @@ namespace QLCH
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.Read())
             {
+                Program.user = sdr.GetString(0);
+                //new Form show
                 MessageBox.Show("Đăng nhập thành công !");
             }
             else
