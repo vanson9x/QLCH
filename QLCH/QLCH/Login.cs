@@ -36,7 +36,6 @@ namespace QLCH
                 Program.user = sdr.GetString(0);
                 new MainForm().Show();
                 this.Hide();
-                MessageBox.Show("Đăng nhập thành công !");
             }
             else
             {
