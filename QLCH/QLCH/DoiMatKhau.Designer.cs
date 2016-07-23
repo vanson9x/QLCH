@@ -1,6 +1,6 @@
 ﻿namespace QLCH
 {
-    partial class ChangePassword
+    partial class DoiMatKhau
     {
         /// <summary>
         /// Required designer variable.

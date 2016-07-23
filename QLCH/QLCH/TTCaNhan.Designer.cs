@@ -1,6 +1,6 @@
 ﻿namespace QLCH
 {
-    partial class Profile_User
+    partial class TTCaNhan
     {
         /// <summary>
         /// Required designer variable.

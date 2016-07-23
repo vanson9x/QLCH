@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace QLCH
 {
-    public partial class MainForm : Form
+    public partial class ChucNang : Form
     {
-        public MainForm()
+        public ChucNang()
         {
             InitializeComponent();
         }
@@ -23,14 +23,14 @@ namespace QLCH
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Profile_User profile = new Profile_User();
+            TTCaNhan profile = new TTCaNhan();
             profile.MdiParent = this;
             profile.Show();
         }
 
         private void doiMk_Click(object sender, EventArgs e)
         {
-            ChangePassword change = new ChangePassword();
+            DoiMatKhau change = new DoiMatKhau();
             change.MdiParent = this;
             change.Show();
         }
@@ -43,7 +43,7 @@ namespace QLCH
             this.MI_NhapHang.Enabled = false;
             this.MI_ThongKe.Enabled = false;
             Program.user = "";
-            Login login = new Login();
+            DangNhap login = new DangNhap();
             login.MdiParent = this;
             login.Show();
         }

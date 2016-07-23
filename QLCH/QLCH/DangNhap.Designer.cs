@@ -1,6 +1,6 @@
 ﻿namespace QLCH
 {
-    partial class Login
+    partial class DangNhap
     {
         /// <summary>
         /// Required designer variable.

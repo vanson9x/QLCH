@@ -1,6 +1,6 @@
 ﻿namespace QLCH
 {
-    partial class MainForm
+    partial class ChucNang
     {
         /// <summary>
         /// Required designer variable.

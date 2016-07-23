@@ -11,13 +11,13 @@ using System.Configuration;
 
 namespace QLCH
 {
-    public partial class ChangePassword : Form
+    public partial class DoiMatKhau : Form
     {
         string query = "";
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectString"].ConnectionString);
         SqlCommand cmd;
 
-        public ChangePassword()
+        public DoiMatKhau()
         {
             InitializeComponent();
         }

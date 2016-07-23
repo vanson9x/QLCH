@@ -11,7 +11,7 @@ using System.Configuration;
 
 namespace QLCH
 {
-    public partial class Login : Form
+    public partial class DangNhap : Form
     {
         //Thiet lap doi tuong Sql
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectString"].ConnectionString);
@@ -19,7 +19,7 @@ namespace QLCH
         string query;
         //END
         
-        public Login()
+        public DangNhap()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -34,10 +34,10 @@ namespace QLCH
             if (sdr.Read())
             {
                 Program.user = sdr.GetString(0);
-                MainForm fc = Application.OpenForms["MainForm"] as MainForm;
+                ChucNang fc = Application.OpenForms["MainForm"] as ChucNang;
                 if (fc==null)
                 {
-                    MainForm mainForm = new MainForm();
+                    ChucNang mainForm = new ChucNang();
                     mainForm.Show();
                 }
                 else

@@ -11,13 +11,13 @@ using System.Configuration;
 
 namespace QLCH
 {
-    public partial class Profile_User : Form
+    public partial class TTCaNhan : Form
     {
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectString"].ConnectionString);
         SqlCommand cmd;
         string query;
 
-        public Profile_User()
+        public TTCaNhan()
         {
             InitializeComponent();
         }
