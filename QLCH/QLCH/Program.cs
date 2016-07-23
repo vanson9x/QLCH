@@ -20,7 +20,7 @@ namespace QLCH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Profile_User());
+            Application.Run(new Login());
         }
     }
 }
