@@ -20,7 +20,6 @@ namespace QLCH
         public Profile_User()
         {
             InitializeComponent();
-            btnSua.FlatStyle = FlatStyle.Flat;
         }
 
         private void Profile_User_Load(object sender, EventArgs e)
