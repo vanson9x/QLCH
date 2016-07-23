@@ -27,5 +27,34 @@ namespace QLCH
             profile.MdiParent = this;
             profile.Show();
         }
+
+        private void doiMk_Click(object sender, EventArgs e)
+        {
+            ChangePassword change = new ChangePassword();
+            change.MdiParent = this;
+            change.Show();
+        }
+
+        private void dangxuat_Click(object sender, EventArgs e)
+        {
+            this.MI_TaiKhoan.Enabled = false;
+            this.MI_BanHang.Enabled = false;
+            this.MI_DanhSach.Enabled = false;
+            this.MI_NhapHang.Enabled = false;
+            this.MI_ThongKe.Enabled = false;
+            Program.user = "";
+            Login login = new Login();
+            login.MdiParent = this;
+            login.Show();
+        }
+
+        public void EnableMenuItem()
+        {
+            this.MI_TaiKhoan.Enabled = true;
+            this.MI_BanHang.Enabled = true;
+            this.MI_DanhSach.Enabled = true;
+            this.MI_NhapHang.Enabled = true;
+            this.MI_ThongKe.Enabled = true;
+        }
     }
 }

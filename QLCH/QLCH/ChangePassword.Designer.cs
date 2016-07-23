@@ -96,6 +96,7 @@
             this.btnOk.TabIndex = 6;
             this.btnOk.Text = "Thay đổi";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // ChangePassword
             // 

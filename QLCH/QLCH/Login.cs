@@ -34,7 +34,17 @@ namespace QLCH
             if (sdr.Read())
             {
                 Program.user = sdr.GetString(0);
-                new MainForm().Show();
+                MainForm fc = Application.OpenForms["MainForm"] as MainForm;
+                if (fc==null)
+                {
+                    MainForm mainForm = new MainForm();
+                    mainForm.Show();
+                }
+                else
+                {
+                    fc.Show();
+                    fc.EnableMenuItem();
+                }
                 this.Hide();
             }
             else
@@ -44,6 +54,11 @@ namespace QLCH
             }
             cmd = null; //gia phong data doi tuong
             conn.Close();
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           Application.Exit();
         }
     }
 }
