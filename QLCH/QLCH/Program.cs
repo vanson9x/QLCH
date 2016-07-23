@@ -7,6 +7,7 @@ namespace QLCH
 {
     static class Program
     {
+        public static string user = "";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
