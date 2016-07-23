@@ -56,5 +56,12 @@ namespace QLCH
             this.MI_NhapHang.Enabled = true;
             this.MI_ThongKe.Enabled = true;
         }
+
+        private void điệnThoạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DSNhanVien dsNhanvien = new DSNhanVien();
+            dsNhanvien.MdiParent = this;
+            dsNhanvien.Show();
+        }
     }
 }

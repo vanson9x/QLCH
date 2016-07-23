@@ -107,6 +107,7 @@
             this.điệnThoạiToolStripMenuItem.Name = "điệnThoạiToolStripMenuItem";
             this.điệnThoạiToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.điệnThoạiToolStripMenuItem.Text = "Nhân viên";
+            this.điệnThoạiToolStripMenuItem.Click += new System.EventHandler(this.điệnThoạiToolStripMenuItem_Click);
             // 
             // sảnPhẩmKhuyếnMạiToolStripMenuItem
             // 
@@ -150,16 +151,16 @@
             // hóaĐơnNhậpHàngToolStripMenuItem
             // 
             this.hóaĐơnNhậpHàngToolStripMenuItem.Name = "hóaĐơnNhậpHàngToolStripMenuItem";
-            this.hóaĐơnNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hóaĐơnNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.hóaĐơnNhậpHàngToolStripMenuItem.Text = "Nhập hàng";
             // 
             // hóaToolStripMenuItem
             // 
             this.hóaToolStripMenuItem.Name = "hóaToolStripMenuItem";
-            this.hóaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hóaToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.hóaToolStripMenuItem.Text = "Bán hàng";
             // 
-            // MainForm
+            // ChucNang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,7 +169,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainForm";
+            this.Name = "ChucNang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý cửa hàng điện thoại";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

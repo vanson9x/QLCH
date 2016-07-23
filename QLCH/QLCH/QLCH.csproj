@@ -63,6 +63,12 @@
     <Compile Include="ChucNang.Designer.cs">
       <DependentUpon>ChucNang.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSNhanVien.Designer.cs">
+      <DependentUpon>DSNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="TTCaNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang.resx">
       <DependentUpon>ChucNang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSNhanVien.resx">
+      <DependentUpon>DSNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TTCaNhan.resx">
       <DependentUpon>TTCaNhan.cs</DependentUpon>
