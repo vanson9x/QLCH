@@ -149,11 +149,8 @@ namespace QLCH
                     row[5] = tbSdt.Text;
                     table.Rows.InsertAt(row,0);
                     DGView_NhanVien.Refresh();
+                    RowSelected = DGView_NhanVien.Rows[0];
                     SetEmpty();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại !");
                 }
                 conn.Close();
             }
