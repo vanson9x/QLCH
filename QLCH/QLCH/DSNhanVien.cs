@@ -72,19 +72,6 @@ namespace QLCH
             tbSdt.Text = "";
         }
 
-        private string CreateMaNV()
-        {
-            string maNV="";
-            string query = "Select * from tbl_Account";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Open();
-            SqlDataReader sdr = cmd.ExecuteReader();
-            int count = sdr.FieldCount;
-            maNV += ("NV" + count.ToString()); 
-            conn.Close();
-            return maNV;
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             query = "SP_UpdateNhanVien";
@@ -123,8 +110,7 @@ namespace QLCH
                 MessageBox.Show("Phải điền đủ thông tin");
             else
             {
-                //query = String.Format("INSERT Into tbl_NhanVien(sMaNV,sTenNV,sChucVu,sDiaChi,sEmail,sSDT) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')", CreateMaNV(), tbHoten.Text, tbChucvu.Text, tbDiachi.Text, tbEmail.Text, tbSdt.Text);
-                string maNV = CreateMaNV();
+                string maNV = "NV" + DGView_NhanVien.Rows.Count.ToString();
                 query = "SP_InsertNhanVien";
                 cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
