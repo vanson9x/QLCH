@@ -63,5 +63,12 @@ namespace QLCH
             dsNhanvien.MdiParent = this;
             dsNhanvien.Show();
         }
+
+        private void MI_NhapHang_Click(object sender, EventArgs e)
+        {
+            NhapHang nhaphang = new NhapHang();
+            nhaphang.MdiParent = this;
+            nhaphang.Show();
+        }
     }
 }
