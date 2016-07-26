@@ -77,5 +77,12 @@ namespace QLCH
             nh.MdiParent = this;
             nh.Show();
         }
+
+        private void MI_BanHang_Click(object sender, EventArgs e)
+        {
+            BanHang bhang = new BanHang();
+            bhang.MdiParent = this;
+            bhang.Show();
+        }
     }
 }
