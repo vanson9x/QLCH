@@ -63,5 +63,12 @@ namespace QLCH
             dsNhanvien.MdiParent = this;
             dsNhanvien.Show();
         }
+
+        private void sảnPhẩmKhuyếnMạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DSSanPham dsSanPham = new DSSanPham();
+            dsSanPham.MdiParent = this;
+            dsSanPham.Show();
+        }
     }
 }
