@@ -15,5 +15,16 @@ namespace QLCH
         {
             InitializeComponent();
         }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["Profile_User"] as Profile_User;
+            if(form == null)
+            {
+                Profile_User profile = new Profile_User();
+                profile.MdiParent = this;
+                profile.Show();
+            }
+        }
     }
 }
