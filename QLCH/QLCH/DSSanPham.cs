@@ -13,7 +13,7 @@ namespace QLCH
 {
     public partial class DSSanPham : Form
     {
-        bool bMaSP, bTenSP, bMoTa, bGia, bMaNCC;
+        bool bTenSP, bMoTa, bGia, bMaNCC;
         string query = "";
         SqlCommand cmd;
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectString"].ConnectionString);
@@ -23,21 +23,37 @@ namespace QLCH
             InitializeComponent();
         }
 
-        private bool CheckTextChange()
-        { 
-            bool check = false;
-            if (bMaSP)
+        private void CheckTextChange()
+        {
+            if (bTenSP || bMoTa || bGia || bMaNCC)
             {
-                return true;
+                btnSua.Enabled = true;
             }
-            return check;
+            else
+            {
+                btnSua.Enabled = false;
+            }
+        }
+
+        private void CheckTextChange(bool e)
+        {
+            if (e == false)
+            {
+                btnSua.Enabled = false;
+            }
+            else if (e == true)
+            {
+                btnSua.Enabled = true;
+            }
         }
 
         private void DSSanPham_Load(object sender, EventArgs e)
         {
             btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            btnXoa.Visible = false;
+            tbMaSP.Enabled = false;
             LoadDataGripView();
+            groupBoxThongTinSP.Enabled = false;
             //if (Program.user == "admin")
             //{
             //    groupBoxChucNang.Enabled = true;
@@ -130,51 +146,80 @@ namespace QLCH
 
         private void LoadTextFromDTGVToTextBox()
         {
-            tbMaSP.Text = dtgv_SanPham.CurrentRow.Cells[0].Value.ToString();
-            tbTenSP.Text = dtgv_SanPham.CurrentRow.Cells[1].Value.ToString();
-            tbMoTa.Text = dtgv_SanPham.CurrentRow.Cells[2].Value.ToString();
-            tbGiaSP.Text = dtgv_SanPham.CurrentRow.Cells[3].Value.ToString();
-            tbMaNCC.Text = dtgv_SanPham.CurrentRow.Cells[4].Value.ToString();
+            try
+            {
+                tbMaSP.Text = dtgv_SanPham.CurrentRow.Cells[0].Value.ToString();
+                tbTenSP.Text = dtgv_SanPham.CurrentRow.Cells[1].Value.ToString();
+                tbMoTa.Text = dtgv_SanPham.CurrentRow.Cells[2].Value.ToString();
+                tbGiaSP.Text = dtgv_SanPham.CurrentRow.Cells[3].Value.ToString();
+                tbMaNCC.Text = dtgv_SanPham.CurrentRow.Cells[4].Value.ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Không có trường nào được chọn");
+            }
         }
 
         private void dtgv_SanPham_Click(object sender, EventArgs e)
         {
             LoadTextFromDTGVToTextBox();
+            groupBoxThongTinSP.Enabled = true;
             btnXoa.Enabled = true;
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                query = "SP_XoaSanPham";
-                conn.Open();
-                cmd = new SqlCommand(query, conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@sMaSP", dtgv_SanPham.CurrentRow.Cells[0].Value.ToString());
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Xóa thành công");
-                }
-                LoadDataGripView();
-                conn.Close();
-            }
+            //DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (result == DialogResult.Yes)
+            //{
+            //    query = "SP_XoaSanPham";
+            //    conn.Open();
+            //    cmd = new SqlCommand(query, conn);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@sMaSP", dtgv_SanPham.CurrentRow.Cells[0].Value.ToString());
+            //    if (cmd.ExecuteNonQuery() > 0)
+            //    {
+            //        MessageBox.Show("Xóa thành công");
+            //    }
+            //    LoadDataGripView();
+            //    conn.Close();
+            //}
+        }
+
+        private void AnHienBtnSua()
+        { 
+            string mahientai = dtgv_SanPham.CurrentRow.Cells[4].Value.ToString();
+            bMaNCC = tbMaNCC.Text == mahientai ? false : true;
+            string tenhientai = dtgv_SanPham.CurrentRow.Cells[1].Value.ToString();
+            bTenSP = tbTenSP.Text == tenhientai ? false : true;
+            string giahientai = dtgv_SanPham.CurrentRow.Cells[3].Value.ToString();
+            bGia = tbGiaSP.Text == giahientai ? false : true;
+            string motahientai = dtgv_SanPham.CurrentRow.Cells[2].Value.ToString();
+            bMoTa = tbMoTa.Text == motahientai ? false : true;
+            CheckTextChange();
         }
 
         private void tbMaNCC_TextChanged(object sender, EventArgs e)
         {
-           
+            AnHienBtnSua();
         }
 
-        private void tbMaSP_TextChanged(object sender, EventArgs e)
+        private void tbTenSP_TextChanged(object sender, EventArgs e)
         {
-            bMaSP = tbMaSP.Text == dtgv_SanPham.CurrentRow.Cells[0].Value.ToString() ? false : true;
-            if (CheckTextChange())
-            {
-                btnSua.Enabled = true;
-            }
+            AnHienBtnSua();
         }
+
+        private void tbGiaSP_TextChanged(object sender, EventArgs e)
+        {
+            AnHienBtnSua();
+        }
+
+        private void tbMoTa_TextChanged(object sender, EventArgs e)
+        {
+            AnHienBtnSua();
+        }
+
 
     }
 }
