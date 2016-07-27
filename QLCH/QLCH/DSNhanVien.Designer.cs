@@ -270,6 +270,7 @@
             this.ClientSize = new System.Drawing.Size(1099, 608);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DGView_NhanVien);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "DSNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

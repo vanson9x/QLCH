@@ -34,16 +34,27 @@ namespace QLCH
             if (sdr.Read())
             {
                 Program.user = sdr.GetString(0);
-                ChucNang fc = Application.OpenForms["MainForm"] as ChucNang;
-                if (fc==null)
+
+                bool checkExits=false;
+                ChucNang form = new ChucNang();
+                foreach(Form fr in Application.OpenForms)
+                {
+                    if (fr is ChucNang)
+                    {
+                        checkExits = true;
+                        form = fr as ChucNang;
+                    }
+                        
+                }
+                if (!checkExits)
                 {
                     ChucNang mainForm = new ChucNang();
                     mainForm.Show();
                 }
                 else
                 {
-                    fc.Show();
-                    fc.EnableMenuItem();
+                    form.Focus();
+                    form.EnableMenuItem();
                 }
                 this.Hide();
             }

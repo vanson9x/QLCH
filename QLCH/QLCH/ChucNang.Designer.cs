@@ -112,7 +112,6 @@
             this.sảnPhẩmKhuyếnMạiToolStripMenuItem.Name = "sảnPhẩmKhuyếnMạiToolStripMenuItem";
             this.sảnPhẩmKhuyếnMạiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sảnPhẩmKhuyếnMạiToolStripMenuItem.Text = "Sản phẩm";
-            this.sảnPhẩmKhuyếnMạiToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmKhuyếnMạiToolStripMenuItem_Click);
             // 
             // nhàCungCấpToolStripMenuItem
             // 
