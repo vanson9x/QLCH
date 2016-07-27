@@ -65,6 +65,7 @@ namespace QLCH
        
         private void SetEmpty()
         {
+            tbMaNV.Text = "";
             tbHoten.Text = "";
             tbChucvu.Text = "";
             tbDiachi.Text = "";
@@ -100,7 +101,6 @@ namespace QLCH
                 this.SetEmpty();
             }
                 
-
             conn.Close();
         }
 
@@ -110,11 +110,10 @@ namespace QLCH
                 MessageBox.Show("Phải điền đủ thông tin");
             else
             {
-                string maNV = "NV" + DGView_NhanVien.Rows.Count.ToString();
                 query = "SP_InsertNhanVien";
                 cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@maNV", maNV);
+                cmd.Parameters.AddWithValue("@maNV", tbMaNV.Text);
                 cmd.Parameters.AddWithValue("@ten", tbHoten.Text);
                 cmd.Parameters.AddWithValue("@chucvu", tbChucvu.Text);
                 cmd.Parameters.AddWithValue("@diachi", tbDiachi.Text);
