@@ -126,7 +126,7 @@ namespace QLCH
                     MessageBox.Show("Thêm thành công");
                     DataTable table = DGView_NhanVien.DataSource as DataTable;
                     DataRow row = table.NewRow();
-                    row[0] = maNV;
+                    row[0] = tbMaNV.Text;
                     row[1] = tbHoten.Text;
                     row[2] = tbChucvu.Text;
                     row[3] = tbDiachi.Text;
