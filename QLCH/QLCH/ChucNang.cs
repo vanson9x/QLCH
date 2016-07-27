@@ -113,6 +113,31 @@ namespace QLCH
             
         }
 
+        private void sảnPhẩmKhuyếnMạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Quản lý sản phẩm");
+            if (!(form is DSSanPham))
+            {
+                DSSanPham dsSP = new DSSanPham();
+                dsSP.MdiParent = this;
+                dsSP.Show();
+            }
+            else
+                form.Focus();
+        }
+
+        private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Quản lý Nhà Cung Cấp");
+            if (!(form is DSNhaCungCap))
+            {
+                DSNhaCungCap dsNCC = new DSNhaCungCap();
+                dsNCC.MdiParent = this;
+                dsNCC.Show();
+            }
+            else
+                form.Focus();
+        }
         //Kiểm tra form đã được mở chưa
         private Form checkExistForm(string nameForm)
         {
@@ -123,5 +148,6 @@ namespace QLCH
             }
             return new Form();
         }
+
     }
 }
