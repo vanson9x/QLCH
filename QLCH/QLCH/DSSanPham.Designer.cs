@@ -104,7 +104,6 @@
             this.tbMaSP.Name = "tbMaSP";
             this.tbMaSP.Size = new System.Drawing.Size(179, 20);
             this.tbMaSP.TabIndex = 6;
-            this.tbMaSP.TextChanged += new System.EventHandler(this.tbMaSP_TextChanged);
             // 
             // tbTenSP
             // 
@@ -112,6 +111,7 @@
             this.tbTenSP.Name = "tbTenSP";
             this.tbTenSP.Size = new System.Drawing.Size(179, 20);
             this.tbTenSP.TabIndex = 7;
+            this.tbTenSP.TextChanged += new System.EventHandler(this.tbTenSP_TextChanged);
             // 
             // tbMoTa
             // 
@@ -121,6 +121,7 @@
             this.tbMoTa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbMoTa.Size = new System.Drawing.Size(440, 93);
             this.tbMoTa.TabIndex = 8;
+            this.tbMoTa.TextChanged += new System.EventHandler(this.tbMoTa_TextChanged);
             // 
             // tbGiaSP
             // 
@@ -128,6 +129,7 @@
             this.tbGiaSP.Name = "tbGiaSP";
             this.tbGiaSP.Size = new System.Drawing.Size(179, 20);
             this.tbGiaSP.TabIndex = 9;
+            this.tbGiaSP.TextChanged += new System.EventHandler(this.tbGiaSP_TextChanged);
             // 
             // dtgv_SanPham
             // 
@@ -253,7 +255,7 @@
             this.MaximizeBox = false;
             this.Name = "DSSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DSSanPham";
+            this.Text = "Quản lý sản phẩm";
             this.Load += new System.EventHandler(this.DSSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_SanPham)).EndInit();
             this.groupBoxThongTinSP.ResumeLayout(false);
