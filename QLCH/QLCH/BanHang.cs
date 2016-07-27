@@ -47,6 +47,7 @@ namespace QLCH
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@maBH", maBH);
             cmd.Parameters.AddWithValue("@thoihan", Convert.ToInt32(tbTgBH.Text));
+            cmd.Parameters.AddWithValue("@FK_sMaCTHD", maCTHD);
             cmd.ExecuteNonQuery();
         }
 
@@ -58,7 +59,6 @@ namespace QLCH
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@maCTHD", maCTHD);
             cmd.Parameters.AddWithValue("@maSP", cbMaSP.Enabled ? cbMaSP.Text : tbMaSP.Text);
-            cmd.Parameters.AddWithValue("@maBH", maBH);
             cmd.Parameters.AddWithValue("@soluong", Convert.ToInt32(tbSoluong.Text));
             cmd.ExecuteNonQuery();
         }
@@ -162,8 +162,8 @@ namespace QLCH
             {
                 if (gbKH.Enabled)
                     InsertKH();
-                InsertBH();
                 InsertCTHD();
+                InsertBH();
                 InsertHD();
                  
                 sqlTran.Commit();
