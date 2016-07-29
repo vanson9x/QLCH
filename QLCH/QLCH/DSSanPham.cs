@@ -40,6 +40,7 @@ namespace QLCH
             groupBoxMoTa.Enabled = false;
             groupBoxChucNang.Enabled = false;
             groupBoxThongTinSP.Enabled = false;
+            btnEmpty.Enabled = false;
             LoadDataGripView();
             if (Program.user == "admin")
             {
@@ -156,7 +157,10 @@ namespace QLCH
             tbMaSP.Enabled = false;
             tbTenSP.Enabled = true;
             tbGiaSP.Enabled = true;
-            btnXoa.Enabled = true;
+            if (Program.user == "admin")
+            {
+                btnEmpty.Enabled = false;
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
