@@ -46,6 +46,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEmpty = new System.Windows.Forms.Button();
             this.groupboxThongTinNCC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_NCC)).BeginInit();
             this.SuspendLayout();
@@ -155,7 +156,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(63, 183);
+            this.btnSua.Location = new System.Drawing.Point(63, 216);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(79, 28);
             this.btnSua.TabIndex = 11;
@@ -217,11 +218,22 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // btnEmpty
+            // 
+            this.btnEmpty.Location = new System.Drawing.Point(118, 181);
+            this.btnEmpty.Name = "btnEmpty";
+            this.btnEmpty.Size = new System.Drawing.Size(75, 23);
+            this.btnEmpty.TabIndex = 13;
+            this.btnEmpty.Text = "Làm rỗng";
+            this.btnEmpty.UseVisualStyleBackColor = true;
+            this.btnEmpty.Click += new System.EventHandler(this.btnEmpty_Click);
+            // 
             // DSNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 500);
+            this.Controls.Add(this.btnEmpty);
             this.Controls.Add(this.dtgv_NCC);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.groupboxThongTinNCC);
@@ -257,5 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button btnEmpty;
     }
 }
