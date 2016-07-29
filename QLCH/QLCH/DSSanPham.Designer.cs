@@ -48,6 +48,7 @@
             this.groupBoxChucNang = new System.Windows.Forms.GroupBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.btnEmpty = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_SanPham)).BeginInit();
             this.groupBoxThongTinSP.SuspendLayout();
             this.groupBoxMoTa.SuspendLayout();
@@ -57,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 55);
+            this.label1.Location = new System.Drawing.Point(7, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 0;
@@ -66,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 86);
+            this.label2.Location = new System.Drawing.Point(7, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 1;
@@ -75,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 121);
+            this.label4.Location = new System.Drawing.Point(7, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 3;
@@ -84,7 +85,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 24);
+            this.label5.Location = new System.Drawing.Point(7, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 4;
@@ -92,7 +93,7 @@
             // 
             // tbMaNCC
             // 
-            this.tbMaNCC.Location = new System.Drawing.Point(92, 21);
+            this.tbMaNCC.Location = new System.Drawing.Point(92, 12);
             this.tbMaNCC.Name = "tbMaNCC";
             this.tbMaNCC.Size = new System.Drawing.Size(179, 20);
             this.tbMaNCC.TabIndex = 5;
@@ -100,14 +101,14 @@
             // 
             // tbMaSP
             // 
-            this.tbMaSP.Location = new System.Drawing.Point(92, 52);
+            this.tbMaSP.Location = new System.Drawing.Point(92, 43);
             this.tbMaSP.Name = "tbMaSP";
             this.tbMaSP.Size = new System.Drawing.Size(179, 20);
             this.tbMaSP.TabIndex = 6;
             // 
             // tbTenSP
             // 
-            this.tbTenSP.Location = new System.Drawing.Point(92, 83);
+            this.tbTenSP.Location = new System.Drawing.Point(92, 74);
             this.tbTenSP.Name = "tbTenSP";
             this.tbTenSP.Size = new System.Drawing.Size(179, 20);
             this.tbTenSP.TabIndex = 7;
@@ -125,7 +126,7 @@
             // 
             // tbGiaSP
             // 
-            this.tbGiaSP.Location = new System.Drawing.Point(92, 118);
+            this.tbGiaSP.Location = new System.Drawing.Point(92, 109);
             this.tbGiaSP.Name = "tbGiaSP";
             this.tbGiaSP.Size = new System.Drawing.Size(179, 20);
             this.tbGiaSP.TabIndex = 9;
@@ -195,9 +196,9 @@
             this.groupBoxThongTinSP.Controls.Add(this.label4);
             this.groupBoxThongTinSP.Controls.Add(this.label2);
             this.groupBoxThongTinSP.Controls.Add(this.label1);
-            this.groupBoxThongTinSP.Location = new System.Drawing.Point(13, 7);
+            this.groupBoxThongTinSP.Location = new System.Drawing.Point(17, 5);
             this.groupBoxThongTinSP.Name = "groupBoxThongTinSP";
-            this.groupBoxThongTinSP.Size = new System.Drawing.Size(302, 155);
+            this.groupBoxThongTinSP.Size = new System.Drawing.Size(272, 130);
             this.groupBoxThongTinSP.TabIndex = 11;
             this.groupBoxThongTinSP.TabStop = false;
             this.groupBoxThongTinSP.Text = "Thông tin SP";
@@ -243,11 +244,22 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
+            // btnEmpty
+            // 
+            this.btnEmpty.Location = new System.Drawing.Point(214, 139);
+            this.btnEmpty.Name = "btnEmpty";
+            this.btnEmpty.Size = new System.Drawing.Size(75, 23);
+            this.btnEmpty.TabIndex = 14;
+            this.btnEmpty.Text = "Làm Rỗng";
+            this.btnEmpty.UseVisualStyleBackColor = true;
+            this.btnEmpty.Click += new System.EventHandler(this.btnEmpty_Click);
+            // 
             // DSSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 508);
+            this.Controls.Add(this.btnEmpty);
             this.Controls.Add(this.groupBoxChucNang);
             this.Controls.Add(this.groupBoxMoTa);
             this.Controls.Add(this.groupBoxThongTinSP);
@@ -289,5 +301,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sThongTinCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn fGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn FK_sMaNCC;
+        private System.Windows.Forms.Button btnEmpty;
     }
 }
