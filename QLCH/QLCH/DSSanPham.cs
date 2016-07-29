@@ -35,29 +35,19 @@ namespace QLCH
             }
         }
 
-        private void CheckTextChange(bool e)
-        {
-            if (e == false)
-            {
-                btnSua.Enabled = false;
-            }
-            else if (e == true)
-            {
-                btnSua.Enabled = true;
-            }
-        }
-
         private void DSSanPham_Load(object sender, EventArgs e)
         {
-            btnSua.Enabled = false;
-            btnXoa.Visible = false;
-            tbMaSP.Enabled = false;
-            LoadDataGripView();
+            groupBoxMoTa.Enabled = false;
+            groupBoxChucNang.Enabled = false;
             groupBoxThongTinSP.Enabled = false;
-            //if (Program.user == "admin")
-            //{
-            //    groupBoxChucNang.Enabled = true;
-            //}
+            btnEmpty.Enabled = false;
+            LoadDataGripView();
+            if (Program.user == "admin")
+            {
+                groupBoxChucNang.Enabled = true;
+                groupBoxThongTinSP.Enabled = true;
+                groupBoxMoTa.Enabled = true;
+            }
         }
 
         private void LoadDataGripView()
@@ -163,28 +153,33 @@ namespace QLCH
         private void dtgv_SanPham_Click(object sender, EventArgs e)
         {
             LoadTextFromDTGVToTextBox();
-            groupBoxThongTinSP.Enabled = true;
-            btnXoa.Enabled = true;
-            
+            tbMaNCC.Enabled = true;
+            tbMaSP.Enabled = false;
+            tbTenSP.Enabled = true;
+            tbGiaSP.Enabled = true;
+            if (Program.user == "admin")
+            {
+                btnEmpty.Enabled = false;
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            //DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (result == DialogResult.Yes)
-            //{
-            //    query = "SP_XoaSanPham";
-            //    conn.Open();
-            //    cmd = new SqlCommand(query, conn);
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    cmd.Parameters.AddWithValue("@sMaSP", dtgv_SanPham.CurrentRow.Cells[0].Value.ToString());
-            //    if (cmd.ExecuteNonQuery() > 0)
-            //    {
-            //        MessageBox.Show("Xóa thành công");
-            //    }
-            //    LoadDataGripView();
-            //    conn.Close();
-            //}
+            DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                query = "SP_XoaSanPham";
+                conn.Open();
+                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@sMaSP", dtgv_SanPham.CurrentRow.Cells[0].Value.ToString());
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Xóa thành công");
+                }
+                LoadDataGripView();
+                conn.Close();
+            }
         }
 
         private void AnHienBtnSua()
@@ -218,6 +213,15 @@ namespace QLCH
         private void tbMoTa_TextChanged(object sender, EventArgs e)
         {
             AnHienBtnSua();
+        }
+
+        private void btnEmpty_Click(object sender, EventArgs e)
+        {
+            tbMaSP.Text = "";
+            tbTenSP.Text = "";
+            tbGiaSP.Text = "";
+            tbMaNCC.Text = "";
+            tbMoTa.Text = "";
         }
 
 
