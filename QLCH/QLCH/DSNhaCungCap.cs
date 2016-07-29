@@ -26,9 +26,14 @@ namespace QLCH
         private void DSNhaCungCap_Load(object sender, EventArgs e)
         {
             groupboxThongTinNCC.Enabled = false;
-            tbMaNCC.Enabled = false;
+            btnEmpty.Enabled = false;
             btnSua.Enabled = false;
+
             LoadDataGriptView();
+            if (Program.user == "admin")
+            {
+                groupboxThongTinNCC.Enabled = true;
+            }
         }
 
         private void LoadDataGriptView()
@@ -64,9 +69,16 @@ namespace QLCH
         private void dtgv_NCC_Click(object sender, EventArgs e)
         {
             LoadTextFromDTGVToTextBox();
-            groupboxThongTinNCC.Enabled = true;
             tbMaNCC.Enabled = false;
+            tbTenNCC.Enabled = true;
+            tbDiaChi.Enabled = true;
+            tbEmail.Enabled = true;
+            tbHotline.Enabled = true;
             btnSua.Enabled = false;
+            if (Program.user == "admin")
+            {
+                btnEmpty.Enabled = true;
+            }
         }
 
         private void CheckTextChange()
@@ -148,6 +160,14 @@ namespace QLCH
             {
                 MessageBox.Show("Các trường ko được bỏ trống", "Thông báo");
             }
+        }
+
+        private void btnEmpty_Click(object sender, EventArgs e)
+        {
+            tbTenNCC.Text = "";
+            tbDiaChi.Text = "";
+            tbEmail.Text = "";
+            tbHotline.Text = "";
         }
 
 
