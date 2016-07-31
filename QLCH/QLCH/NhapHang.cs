@@ -53,7 +53,7 @@ namespace QLCH
             {
                 string query = "SP_ThemSanPham";
                 cmd.CommandText = query;
-                maSP = "SP" + SP.Rows.Count.ToString();
+                maSP = tbMaSp.Text;
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@sMaSP", maSP);
                 cmd.Parameters.AddWithValue("@sTenSP", tbTenSp.Text);
@@ -183,7 +183,7 @@ namespace QLCH
             catch(Exception ex)
             {
                 try { sqlTran.Rollback(); } catch{ }
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lỗi !\n"+ex.Message);
                 conn.Close();
             }
             
