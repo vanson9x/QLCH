@@ -167,6 +167,7 @@ namespace QLCH
                 InsertHD();
                  
                 sqlTran.Commit();
+                MessageBox.Show("Thành công !");
                 gbKH.Enabled = false; //khoa khach hang lai
                 tbMaSP.Text = lbTenSP.Text = tbSoluong.Text = tbTgBH.Text = "";
                 conn.Close();
