@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSReport" targetNamespace="http://tempuri.org/DSReport.xsd" xmlns:mstns="http://tempuri.org/DSReport.xsd" xmlns="http://tempuri.org/DSReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSReport" msprop:Generator_UserDSName="DSReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="cptNhapHang" msprop:Generator_TableClassName="cptNhapHangDataTable" msprop:Generator_TableVarName="tablecptNhapHang" msprop:Generator_TablePropName="cptNhapHang" msprop:Generator_RowDeletingName="cptNhapHangRowDeleting" msprop:Generator_RowChangingName="cptNhapHangRowChanging" msprop:Generator_RowEvHandlerName="cptNhapHangRowChangeEventHandler" msprop:Generator_RowDeletedName="cptNhapHangRowDeleted" msprop:Generator_UserTableName="cptNhapHang" msprop:Generator_RowChangedName="cptNhapHangRowChanged" msprop:Generator_RowEvArgName="cptNhapHangRowChangeEvent" msprop:Generator_RowClassName="cptNhapHangRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sTenSP" msprop:Generator_ColumnVarNameInTable="columnsTenSP" msprop:Generator_ColumnPropNameInRow="sTenSP" msprop:Generator_ColumnPropNameInTable="sTenSPColumn" msprop:Generator_UserColumnName="sTenSP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="iSoLuong" msprop:Generator_ColumnVarNameInTable="columniSoLuong" msprop:Generator_ColumnPropNameInRow="iSoLuong" msprop:Generator_ColumnPropNameInTable="iSoLuongColumn" msprop:Generator_UserColumnName="iSoLuong" type="xs:int" minOccurs="0" />
+              <xs:element name="dbChiPhi" msprop:Generator_ColumnVarNameInTable="columndbChiPhi" msprop:Generator_ColumnPropNameInRow="dbChiPhi" msprop:Generator_ColumnPropNameInTable="dbChiPhiColumn" msprop:Generator_UserColumnName="dbChiPhi" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
