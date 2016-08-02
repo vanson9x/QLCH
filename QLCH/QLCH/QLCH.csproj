@@ -32,9 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,6 +88,14 @@
     <Compile Include="DSNhanVien.Designer.cs">
       <DependentUpon>DSNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSReport.cs">
+      <DependentUpon>DSReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +107,24 @@
     </Compile>
     <Compile Include="NhapHang.designer.cs">
       <DependentUpon>NhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptNhapHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNhapHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptNhapHangView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptNhapHangView.Designer.cs">
+      <DependentUpon>rptNhapHangView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TKNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKNhapHang.Designer.cs">
+      <DependentUpon>TKNhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="TTCaNhan.cs">
       <SubType>Form</SubType>
@@ -125,6 +158,16 @@
     <EmbeddedResource Include="NhapHang.resx">
       <DependentUpon>NhapHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptNhapHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNhapHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptNhapHangView.resx">
+      <DependentUpon>rptNhapHangView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKNhapHang.resx">
+      <DependentUpon>TKNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TTCaNhan.resx">
       <DependentUpon>TTCaNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +183,17 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="DSReport.xsc">
+      <DependentUpon>DSReport.xsd</DependentUpon>
+    </None>
+    <None Include="DSReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSReport.xss">
+      <DependentUpon>DSReport.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -149,6 +203,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

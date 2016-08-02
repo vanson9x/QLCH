@@ -149,5 +149,17 @@ namespace QLCH
             return new Form();
         }
 
+        private void hóaĐơnNhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Thống kê nhập hàng");
+            if (!(form is TKNhapHang))
+            {
+                TKNhapHang tkNH = new TKNhapHang();
+                tkNH.MdiParent = this;
+                tkNH.Show();
+            }
+            else
+                form.Focus();
+        }
     }
 }
