@@ -80,7 +80,9 @@ namespace QLCH
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
-
+            rptNhapHangView rptNHView = new rptNhapHangView();
+            rptNHView.maPN = cbMaPN.Text;
+            rptNHView.Show();
         }
     }
 }
