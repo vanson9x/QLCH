@@ -54,17 +54,21 @@ namespace QLCH
             btnThem.Enabled = false;
             int index = DGView_NhanVien.CurrentRow.Index;
             RowSelected = DGView_NhanVien.Rows[index];
+            tbMaNV.Text = RowSelected.Cells[0].Value.ToString();
             tbHoten.Text = RowSelected.Cells[1].Value.ToString();
             tbChucvu.Text = RowSelected.Cells[2].Value.ToString();
             tbDiachi.Text = RowSelected.Cells[3].Value.ToString();
             tbEmail.Text = RowSelected.Cells[4].Value.ToString();
             tbSdt.Text = RowSelected.Cells[5].Value.ToString();
+            
+            tbMaNV.Enabled = false;
             checkChanged();
         }
 
        
         private void SetEmpty()
         {
+            tbMaNV.Enabled = true;
             tbMaNV.Text = "";
             tbHoten.Text = "";
             tbChucvu.Text = "";
