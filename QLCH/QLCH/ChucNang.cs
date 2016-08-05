@@ -161,5 +161,18 @@ namespace QLCH
             else
                 form.Focus();
         }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Danh sách khách hàng");
+            if (!(form is DSKhachHang))
+            {
+                DSKhachHang dsKH = new DSKhachHang();
+                dsKH.MdiParent = this;
+                dsKH.Show();
+            }
+            else
+                form.Focus();
+        }
     }
 }
