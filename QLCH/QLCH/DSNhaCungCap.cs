@@ -28,6 +28,7 @@ namespace QLCH
             groupboxThongTinNCC.Enabled = false;
             btnEmpty.Enabled = false;
             btnSua.Enabled = false;
+            btnXoa.Enabled = false;
 
             LoadDataGriptView();
             if (Program.user == "admin")
@@ -78,6 +79,7 @@ namespace QLCH
             if (Program.user == "admin")
             {
                 btnEmpty.Enabled = true;
+                btnXoa.Enabled = true;
             }
         }
 
