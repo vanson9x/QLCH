@@ -25,6 +25,11 @@ namespace QLCH
         private void FrmTKBanHang_Load(object sender, EventArgs e)
         {
             lbThongBaoThoiGian.Text = "";
+            if (radioButtonKoLoc.Checked = true)
+            {
+                tbThoiGian.Enabled = false;
+                lbNhapthoigian.Enabled = false;
+            }
             //cry.Load(@"C:\Users\anhsachxx\Documents\QLCH\QLCH\QLCH\CrystalReportTKBanHang.rpt");
             using (SqlConnection conn = new SqlConnection(connStr))
             {
@@ -72,6 +77,8 @@ namespace QLCH
             if (radioButtonNgay.Checked == true)
             {
                 lbNhapthoigian.Text = "Nhập ngày";
+                tbThoiGian.Enabled = true;
+                lbNhapthoigian.Enabled = true;
             }
         }
 
@@ -80,6 +87,8 @@ namespace QLCH
             if (radioButtonThang.Checked == true)
             {
                 lbNhapthoigian.Text = "Nhập tháng";
+                tbThoiGian.Enabled = true;
+                lbNhapthoigian.Enabled = true;
             }
         }
 
@@ -119,9 +128,14 @@ namespace QLCH
             }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonKoLoc_CheckedChanged(object sender, EventArgs e)
         {
             tbThoiGian.Text = "";
+            if (radioButtonKoLoc.Checked == true)
+            {
+                tbThoiGian.Enabled = false;
+                lbNhapthoigian.Enabled = false;
+            }
             //cry.Load(@"C:\Users\anhsachxx\Documents\QLCH\QLCH\QLCH\CrystalReportTKBanHang.rpt");
             using (SqlConnection conn = new SqlConnection(connStr))
             {
