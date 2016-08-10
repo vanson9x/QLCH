@@ -23,16 +23,29 @@ namespace QLCH
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TTCaNhan profile = new TTCaNhan();
-            profile.MdiParent = this;
-            profile.Show();
+            Form form = checkExistForm("Thông tin người dùng");
+            if (!(form is TTCaNhan))
+            {
+                TTCaNhan profile = new TTCaNhan();
+                profile.MdiParent = this;
+                profile.Show();
+            }
+            else
+                form.Focus();  
         }
 
         private void doiMk_Click(object sender, EventArgs e)
         {
-            DoiMatKhau change = new DoiMatKhau();
-            change.MdiParent = this;
-            change.Show();
+            Form form = checkExistForm("Đổi mật khẩu");
+            if (!(form is DoiMatKhau))
+            {
+                DoiMatKhau change = new DoiMatKhau();
+                change.MdiParent = this;
+                change.Show();
+            }
+            else
+                form.Focus();
+               
         }
 
         private void dangxuat_Click(object sender, EventArgs e)
@@ -59,9 +72,107 @@ namespace QLCH
 
         private void điệnThoạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DSNhanVien dsNhanvien = new DSNhanVien();
-            dsNhanvien.MdiParent = this;
-            dsNhanvien.Show();
+            Form form = checkExistForm("Danh sách nhân viên");
+            if (!(form is DSNhanVien))
+            {
+                DSNhanVien dsNhanvien = new DSNhanVien();
+                dsNhanvien.MdiParent = this;
+                dsNhanvien.Show();
+            }
+            else
+                form.Focus();
+
+            
+        }
+
+        private void MI_NhapHang_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Nhập hàng");
+            if (!(form is NhapHang))
+            {
+                NhapHang nh = new NhapHang();
+                nh.MdiParent = this;
+                nh.Show();
+            }
+            else
+                form.Focus();
+            
+        }
+
+        private void MI_BanHang_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Bán hàng");
+            if (!(form is BanHang))
+            {
+                BanHang bhang = new BanHang();
+                bhang.MdiParent = this;
+                bhang.Show();
+            }
+            else
+                form.Focus();
+            
+        }
+
+        private void sảnPhẩmKhuyếnMạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Quản lý sản phẩm");
+            if (!(form is DSSanPham))
+            {
+                DSSanPham dsSP = new DSSanPham();
+                dsSP.MdiParent = this;
+                dsSP.Show();
+            }
+            else
+                form.Focus();
+        }
+
+        private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Quản lý Nhà Cung Cấp");
+            if (!(form is DSNhaCungCap))
+            {
+                DSNhaCungCap dsNCC = new DSNhaCungCap();
+                dsNCC.MdiParent = this;
+                dsNCC.Show();
+            }
+            else
+                form.Focus();
+        }
+        //Kiểm tra form đã được mở chưa
+        private Form checkExistForm(string nameForm)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == nameForm)
+                    return form;
+            }
+            return new Form();
+        }
+
+        private void hóaĐơnNhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Thống kê nhập hàng");
+            if (!(form is TKNhapHang))
+            {
+                TKNhapHang tkNH = new TKNhapHang();
+                tkNH.MdiParent = this;
+                tkNH.Show();
+            }
+            else
+                form.Focus();
+        }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = checkExistForm("Danh sách khách hàng");
+            if (!(form is DSKhachHang))
+            {
+                DSKhachHang dsKH = new DSKhachHang();
+                dsKH.MdiParent = this;
+                dsKH.Show();
+            }
+            else
+                form.Focus();
         }
     }
 }

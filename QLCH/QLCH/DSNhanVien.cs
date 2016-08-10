@@ -54,35 +54,27 @@ namespace QLCH
             btnThem.Enabled = false;
             int index = DGView_NhanVien.CurrentRow.Index;
             RowSelected = DGView_NhanVien.Rows[index];
+            tbMaNV.Text = RowSelected.Cells[0].Value.ToString();
             tbHoten.Text = RowSelected.Cells[1].Value.ToString();
             tbChucvu.Text = RowSelected.Cells[2].Value.ToString();
             tbDiachi.Text = RowSelected.Cells[3].Value.ToString();
             tbEmail.Text = RowSelected.Cells[4].Value.ToString();
             tbSdt.Text = RowSelected.Cells[5].Value.ToString();
+            
+            tbMaNV.Enabled = false;
             checkChanged();
         }
 
        
         private void SetEmpty()
         {
+            tbMaNV.Enabled = true;
+            tbMaNV.Text = "";
             tbHoten.Text = "";
             tbChucvu.Text = "";
             tbDiachi.Text = "";
             tbEmail.Text = "";
             tbSdt.Text = "";
-        }
-
-        private string CreateMaNV()
-        {
-            string maNV="";
-            string query = "Select * from tbl_Account";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Open();
-            SqlDataReader sdr = cmd.ExecuteReader();
-            int count = sdr.FieldCount;
-            maNV += ("NV" + count.ToString()); 
-            conn.Close();
-            return maNV;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -113,7 +105,6 @@ namespace QLCH
                 this.SetEmpty();
             }
                 
-
             conn.Close();
         }
 
@@ -123,12 +114,10 @@ namespace QLCH
                 MessageBox.Show("Phải điền đủ thông tin");
             else
             {
-                //query = String.Format("INSERT Into tbl_NhanVien(sMaNV,sTenNV,sChucVu,sDiaChi,sEmail,sSDT) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')", CreateMaNV(), tbHoten.Text, tbChucvu.Text, tbDiachi.Text, tbEmail.Text, tbSdt.Text);
-                string maNV = CreateMaNV();
                 query = "SP_InsertNhanVien";
                 cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@maNV", maNV);
+                cmd.Parameters.AddWithValue("@maNV", tbMaNV.Text);
                 cmd.Parameters.AddWithValue("@ten", tbHoten.Text);
                 cmd.Parameters.AddWithValue("@chucvu", tbChucvu.Text);
                 cmd.Parameters.AddWithValue("@diachi", tbDiachi.Text);
@@ -141,7 +130,7 @@ namespace QLCH
                     MessageBox.Show("Thêm thành công");
                     DataTable table = DGView_NhanVien.DataSource as DataTable;
                     DataRow row = table.NewRow();
-                    row[0] = maNV;
+                    row[0] = tbMaNV.Text;
                     row[1] = tbHoten.Text;
                     row[2] = tbChucvu.Text;
                     row[3] = tbDiachi.Text;
@@ -149,11 +138,8 @@ namespace QLCH
                     row[5] = tbSdt.Text;
                     table.Rows.InsertAt(row,0);
                     DGView_NhanVien.Refresh();
+                    RowSelected = DGView_NhanVien.Rows[0];
                     SetEmpty();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại !");
                 }
                 conn.Close();
             }

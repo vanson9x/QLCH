@@ -34,16 +34,27 @@ namespace QLCH
             if (sdr.Read())
             {
                 Program.user = sdr.GetString(0);
-                ChucNang fc = Application.OpenForms["MainForm"] as ChucNang;
-                if (fc==null)
+
+                bool checkExits=false;
+                ChucNang form = new ChucNang();
+                foreach(Form fr in Application.OpenForms)
+                {
+                    if (fr is ChucNang)
+                    {
+                        checkExits = true;
+                        form = fr as ChucNang;
+                    }
+                        
+                }
+                if (!checkExits)
                 {
                     ChucNang mainForm = new ChucNang();
                     mainForm.Show();
                 }
                 else
                 {
-                    fc.Show();
-                    fc.EnableMenuItem();
+                    form.Focus();
+                    form.EnableMenuItem();
                 }
                 this.Hide();
             }
@@ -51,6 +62,7 @@ namespace QLCH
             {
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu !");
                 tbUser.Text = tbPassword.Text = "";
+                tbUser.Focus();
             }
             cmd = null; //gia phong data doi tuong
             conn.Close();
@@ -59,6 +71,18 @@ namespace QLCH
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
            Application.Exit();
+        }
+
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                btnLogin_Click(sender,e);
+        }
+
+        private void tbUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                tbPassword.Focus();
         }
     }
 }
