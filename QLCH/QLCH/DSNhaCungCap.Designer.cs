@@ -47,6 +47,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEmpty = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.groupboxThongTinNCC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_NCC)).BeginInit();
             this.SuspendLayout();
@@ -156,7 +157,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(63, 216);
+            this.btnSua.Location = new System.Drawing.Point(20, 216);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(79, 28);
             this.btnSua.TabIndex = 11;
@@ -228,11 +229,22 @@
             this.btnEmpty.UseVisualStyleBackColor = true;
             this.btnEmpty.Click += new System.EventHandler(this.btnEmpty_Click);
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(105, 216);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(79, 28);
+            this.btnXoa.TabIndex = 14;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // DSNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 500);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnEmpty);
             this.Controls.Add(this.dtgv_NCC);
             this.Controls.Add(this.btnSua);
@@ -270,5 +282,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button btnEmpty;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

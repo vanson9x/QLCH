@@ -168,17 +168,23 @@ namespace QLCH
             DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                query = "SP_XoaSanPham";
-                conn.Open();
+                query = "SP_DEL_SP";
                 cmd = new SqlCommand(query, conn);
+                conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@sMaSP", dtgv_SanPham.CurrentRow.Cells[0].Value.ToString());
+                cmd.Parameters.AddWithValue("@maSP", dtgv_SanPham.CurrentRow.Cells[0].Value.ToString());
+
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     MessageBox.Show("Xóa thành công");
+                    conn.Close();
+                    LoadDataGripView();
                 }
-                LoadDataGripView();
-                conn.Close();
+                else
+                {
+                    MessageBox.Show("Lỗi xóa Dữ Liệu", "Cảnh báo", MessageBoxButtons.OK);
+                    return;
+                }
             }
         }
 
