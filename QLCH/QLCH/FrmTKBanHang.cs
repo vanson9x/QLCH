@@ -8,13 +8,15 @@ using System.Text;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace QLCH
 {
     public partial class FrmTKBanHang : Form
     {
-        string connStr = @"Data Source=MRSACH;Initial Catalog=QLCHDT;Integrated Security=True";
-        ReportDocument cry = new ReportDocument();
+        string connStr = ConfigurationManager.ConnectionStrings["connectString"].ConnectionString;
+        CrystalReportTKBanHang cry = new CrystalReportTKBanHang();
+
         public FrmTKBanHang()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace QLCH
         private void FrmTKBanHang_Load(object sender, EventArgs e)
         {
             lbThongBaoThoiGian.Text = "";
-            cry.Load(@"C:\Users\anhsachxx\Documents\QLCH\QLCH\QLCH\CrystalReportTKBanHang.rpt");
+            //cry.Load(@"C:\Users\anhsachxx\Documents\QLCH\QLCH\QLCH\CrystalReportTKBanHang.rpt");
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter("dbo.TKBanHang", conn))
@@ -46,7 +48,7 @@ namespace QLCH
                 {
                     lbThongBaoThoiGian.Text = "Nhập dữ liệu thời gian trước";
                 }
-                cry.Load(@"C:\Users\anhsachxx\Documents\QLCH\QLCH\QLCH\CrystalReportTKBanHang.rpt");
+                //cry.Load(@"C:\Users\anhsachxx\Documents\QLCH\QLCH\QLCH\CrystalReportTKBanHang.rpt");
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter("SP_TKBANHANGTHEOTHOIGIAN", conn))
@@ -120,7 +122,7 @@ namespace QLCH
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             tbThoiGian.Text = "";
-            cry.Load(@"C:\Users\anhsachxx\Documents\QLCH\QLCH\QLCH\CrystalReportTKBanHang.rpt");
+            //cry.Load(@"C:\Users\anhsachxx\Documents\QLCH\QLCH\QLCH\CrystalReportTKBanHang.rpt");
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter("dbo.TKBanHang", conn))
