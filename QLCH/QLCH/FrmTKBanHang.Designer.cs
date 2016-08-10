@@ -33,11 +33,11 @@
             this.radioButtonThang = new System.Windows.Forms.RadioButton();
             this.radioButtonNgay = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonKoLoc = new System.Windows.Forms.RadioButton();
             this.lbNhapthoigian = new System.Windows.Forms.Label();
             this.tbThoiGian = new System.Windows.Forms.TextBox();
             this.btnLoc = new System.Windows.Forms.Button();
             this.lbThongBaoThoiGian = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +85,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButtonKoLoc);
             this.groupBox1.Controls.Add(this.radioButtonThang);
             this.groupBox1.Controls.Add(this.radioButtonNgay);
             this.groupBox1.Location = new System.Drawing.Point(89, -7);
@@ -93,6 +93,19 @@
             this.groupBox1.Size = new System.Drawing.Size(178, 39);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // radioButtonKoLoc
+            // 
+            this.radioButtonKoLoc.AutoSize = true;
+            this.radioButtonKoLoc.Checked = true;
+            this.radioButtonKoLoc.Location = new System.Drawing.Point(119, 16);
+            this.radioButtonKoLoc.Name = "radioButtonKoLoc";
+            this.radioButtonKoLoc.Size = new System.Drawing.Size(55, 17);
+            this.radioButtonKoLoc.TabIndex = 4;
+            this.radioButtonKoLoc.TabStop = true;
+            this.radioButtonKoLoc.Text = "Ko lọc";
+            this.radioButtonKoLoc.UseVisualStyleBackColor = true;
+            this.radioButtonKoLoc.CheckedChanged += new System.EventHandler(this.radioButtonKoLoc_CheckedChanged);
             // 
             // lbNhapthoigian
             // 
@@ -132,19 +145,6 @@
             this.lbThongBaoThoiGian.TabIndex = 8;
             this.lbThongBaoThoiGian.Text = "lbThongBaoThoiGian";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(119, 16);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(55, 17);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Ko lọc";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
             // FrmTKBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,7 +159,7 @@
             this.Controls.Add(this.crystalReportViewerTKBanHang);
             this.Name = "FrmTKBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmTKBanHang";
+            this.Text = "Thống kế bán hàng";
             this.Load += new System.EventHandler(this.FrmTKBanHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -179,6 +179,6 @@
         private System.Windows.Forms.TextBox tbThoiGian;
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Label lbThongBaoThoiGian;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonKoLoc;
     }
 }

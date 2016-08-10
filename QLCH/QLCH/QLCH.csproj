@@ -64,14 +64,6 @@
       <DependentUpon>CrystalReportTKBanHang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DataSetTKBanHang.cs">
-      <DependentUpon>DataSetTKBanHang.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSetTKBanHang.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetTKBanHang.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,7 +211,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-<<<<<<< HEAD
     <None Include="DSReport.xsc">
       <DependentUpon>DSReport.xsd</DependentUpon>
     </None>
@@ -230,18 +221,6 @@
     </None>
     <None Include="DSReport.xss">
       <DependentUpon>DSReport.xsd</DependentUpon>
-=======
-    <None Include="DataSetTKBanHang.xsc">
-      <DependentUpon>DataSetTKBanHang.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetTKBanHang.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetTKBanHang.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSetTKBanHang.xss">
-      <DependentUpon>DataSetTKBanHang.xsd</DependentUpon>
->>>>>>> TKBanHang
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
