@@ -28,6 +28,7 @@ namespace QLCH
             groupboxThongTinNCC.Enabled = false;
             btnEmpty.Enabled = false;
             btnSua.Enabled = false;
+            btnXoa.Enabled = false;
 
             LoadDataGriptView();
             if (Program.user == "admin")
@@ -78,6 +79,7 @@ namespace QLCH
             if (Program.user == "admin")
             {
                 btnEmpty.Enabled = true;
+                btnXoa.Enabled = true;
             }
         }
 
@@ -168,6 +170,30 @@ namespace QLCH
             tbDiaChi.Text = "";
             tbEmail.Text = "";
             tbHotline.Text = "";
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                query = "SP_DEL_NCC";
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maNCC", dtgv_NCC.CurrentRow.Cells[0].Value.ToString());
+                
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Xóa thành công");
+                    LoadDataGriptView();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi xóa Dữ Liệu", "Cảnh báo", MessageBoxButtons.OK);
+                    return;
+                }
+            }
         }
 
 
